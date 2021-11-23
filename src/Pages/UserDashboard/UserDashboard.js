@@ -4,7 +4,6 @@ import AddressBook from '../../Components/AddressBook'
 import MegaMenu from '../../Components/MegaMenu'
 import MyOrders from '../../Components/MyOrders'
 
-
 const UserDashboard = () => {
     const [active,setActive] = useState(0)
     return (
@@ -54,8 +53,10 @@ const UserDashboard = () => {
                 </div>
             </div>
         </div>
-    </div>
-    </div>
+
+        </div>
+
+    </div>    
     )
 }
 
