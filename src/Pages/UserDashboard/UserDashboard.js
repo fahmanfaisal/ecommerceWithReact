@@ -1,13 +1,21 @@
 import React, {useState} from 'react'
 import AccountInformation from '../../Components/AccountInformation'
 import AddressBook from '../../Components/AddressBook'
+import MegaMenu from '../../Components/MegaMenu'
 import MyOrders from '../../Components/MyOrders'
+
 
 const UserDashboard = () => {
     const [active,setActive] = useState(0)
     return (
+        <div>
+
+        <div class="p-2 bg-blue-500 ">
+            <MegaMenu/>
+        </div>    
+       
+
         <div class="container px-10 mx-auto p-4 ">
-        
         <h2 class="text-xl md:text-2xl font-semibold">My Account</h2>
         <div>
             
@@ -31,22 +39,6 @@ const UserDashboard = () => {
 
                 <div className="changeable md:col-span-3">
 
-                {/* {
-                    active == 0 && <div class=" ">
-                    
-                    <AccountInformation/>
-
-                    <br/>
-                    
-                    <AccountInformation/>
-
-                    <br/>
-                   {
-                        <MyOrders />
-                    }
-                    </div>
-                } */}
-
                 {
                     active == 0 && <AccountInformation/>
                 }
@@ -62,6 +54,7 @@ const UserDashboard = () => {
                 </div>
             </div>
         </div>
+    </div>
     </div>
     )
 }
