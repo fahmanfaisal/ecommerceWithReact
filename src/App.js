@@ -4,9 +4,9 @@ import Footer from './Pages/Footer';
 
 function App() {
   return (
-    <div class="">
+    <div className="">
       <UserDashboard/>
-      <div class="">
+      <div className="">
         <Footer/>
       </div>
     </div>
