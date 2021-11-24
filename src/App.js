@@ -6,7 +6,7 @@ function App() {
   return (
     <div class="">
       <UserDashboard/>
-      <div class="mt-80">
+      <div class="">
         <Footer/>
       </div>
     </div>

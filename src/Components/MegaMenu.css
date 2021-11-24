@@ -1,6 +1,12 @@
 .dropdown:hover .dropdown-menu {
   display: grid;
+  grid-template-columns: repeat(auto-fill,400px);
+  grid-gap: 15px;
+  padding: 20px;
+}
+.dropdown:hover .dropdown-wrapper {
+  display: grid;
   grid-template-columns: repeat(auto-fill,200px);
-  grid-gap: 5px;
-  padding: 10px;
+  grid-gap: 0px;
+  padding: 20px;
 }
