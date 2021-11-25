@@ -10,7 +10,8 @@ import { FaYoutubeSquare } from "react-icons/fa";
 
 function Footer() {
     return (
-        <div className="bg-gray-100">
+        <div className="bg-gray-100 ">
+            <div className="container mx-auto">
             <div className="grid grid-rows-1 md:grid-cols-5 grid-gap-2 md:container md:mx-auto justify-items-center p-10 ">
 
                 <div className="text-center">
@@ -53,7 +54,7 @@ function Footer() {
 
                 <div className="col-span-2">
                     <p className="text-xl pb-4 uppercase">Download Our app</p>
-                    <div className="md:flex">
+                    <div className="md:flex flex-col md:flex-row">
                     <img className="cursor-pointer" src={Image0}/>
                     <img className="cursor-pointer" src={Image1}/>   
                     </div>
@@ -63,20 +64,27 @@ function Footer() {
             <div>
                 <hr></hr>
             </div>
-            <div className="grid md:grid-cols-3 grid-gap-2 p-10">
+            <div className="grid md:grid-cols-3 grid-gap-2 p-10 items-center">
                 <div className="flex items-center ">
-                    <FaFacebook className="w-10 h-10 mr-2 cursor-pointer"/>
-                    <FaInstagramSquare className="w-10 h-10 mr-2 cursor-pointer"/>
-                    <FaYoutubeSquare className="w-10 h-10 cursor-pointer"/>
+                    <div style={{color: '#3F80CA'}}>
+                    <FaFacebook className="w-7 h-6 mr-2 cursor-pointer"/>
+                    </div>
+                    <div style={{color: '#DD4C4C'}}>
+                    <FaInstagramSquare className="w-7 h-6 mr-2 cursor-pointer"/>
+                    </div>
+                    <div style={{color: '#292A2B'}}>
+                    <FaYoutubeSquare className="w-7 h-6 cursor-pointer"/>
+                    </div>
                 </div>
                 <div>
                     <p>© 2021 pickaboo.com | All Rights Reserved.</p>
                 </div>
-                <div className="md:flex justify-center">
+                <div className="md:flex justify-end">
                     <img className="w-20 h-12 cursor-pointer" src={Image2}/>
                     <img className="w-20 h-12 cursor-pointer" src={Image3}/>   
                     </div>
             </div>
+        </div>
         </div>
     )
 }

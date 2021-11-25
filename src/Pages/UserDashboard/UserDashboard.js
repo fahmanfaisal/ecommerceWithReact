@@ -9,7 +9,7 @@ const UserDashboard = () => {
     return (
         <div>
 
-        <div className="p-2 bg-blue-500 ">
+        <div className="p-2" style={{backgroundColor: '#11A0DB'}}>
             <MegaMenu/>
         </div>    
        
