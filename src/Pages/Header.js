@@ -1,36 +1,50 @@
 import React from 'react'
+import './Header.css'
+
+import { FaMarsStroke } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
+import { GiShoppingCart } from "react-icons/gi";
 
 export function Header() {
-    
-
     return (
-    <div className="top-border py-6 px-1 border-t-2 border-gray-200">
-        <div className="grid grid-rows-1 md:grid-cols-12 gap-1 justify-items-center container mx-auto">
-            <div className="col-span-2">
-                <img className="w-44 h-22" src="https://b2b-pickaboocdn.azureedge.net/media/logo/stores/1/pickaboo-logo@2x.png" />
-            </div>    
-            <div className="flex items-center col-span-6">
-                    <div className="flex-1 pr-8">
-                        <input type="text" placeholder="Search entire store here" className="px-2 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded text-base border border-gray-400 outline-none focus:outline-none focus:ring w-24 md:w-96"/>
+    <div>
+        <div className="mt-5"><hr></hr></div>
+        <div className="container mx-auto">
+            <div className="grid grid-rows-1 md:grid-cols-12 gap-1 justify-items-stretch items-center px-4 py-4">
+                <div className="justify-self-auto col-span-2 place-self-center">
+                    <img className="w-40 h-20" src="https://b2b-pickaboocdn.azureedge.net/media/logo/stores/1/pickaboo-logo@2x.png" />
+                </div>
+                <div className="col-span-5" >
+                    <input type="text" placeholder="Search entire store here" className="w-full px-2 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded text-base border border-gray-400 outline-none focus:outline-none focus:ring"/>
+                </div>    
+                <div className="flex items-center col-span-2 place-self-center">
+                <div className="flex items-center">
+                    <div style={{color: '#3F80CA'}}>
+                        <GiShoppingCart className="w-7 h-6 mr-2 cursor-pointer"/>
                     </div>
-                    <div className="pl-1 flex items-center">
-                    <div>
-                    
-                    </div>
-                    <div className="pl-2">
-                    <button className="px-2 py-1 bg-gray-200 font-semibold text-gray-800">My Chart</button>
-                    </div>
-                    </div>  
-            </div>
-            <div className="flex items-center col-span-2">
                     <div className="">
-                    
-                    <p className="pl-1 font-semibold text-gray-800">My Account</p>
+                        <button className="px-2 py-1 bg-gray-200 font-semibold text-gray-800">My Chart</button>
                     </div>
-                    <div className="px-2 ">
-                    
-                    <p className="pl-1 font-semibold text-gray-800">Sign Out</p>
+                </div>  
+                </div>
+                <div className="flex items-center col-span-3 place-self-center">
+                    <div className="flex items-center">
+                    <div className="color">
+                        <FaUser className="w-4 h-4"/>
                     </div>
+                    <div>
+                        <p className="pl-1 font-semibold text-gray-800 color">My Account</p>
+                    </div>
+                    </div>
+                    <div className="px-2 flex items-center">
+                    <div className="color">
+                        <FaMarsStroke className="w-4 h-4"/>
+                    </div>
+                    <div>
+                        <p className="pl-1 font-semibold text-gray-800 color">Sign Out</p>
+                    </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

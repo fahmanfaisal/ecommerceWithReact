@@ -23,14 +23,14 @@ const UserDashboard = () => {
                     <div className="bg-gray-200 h-5 rounded-tl rounded-tr">
                     </div>
                     <div className="md:flex md:flex-col px-4 py-6">
-                        <p onClick={() => setActive(0)} className={`cursor-pointer ${active==0 ? "font-bold" : "font-normal"}`}>Accounts</p>
-                        <p onClick={() => setActive(1)} className={`cursor-pointer ${active==1 ? "font-bold" : "font-normal"}`}>My Orders</p>
-                        <p onClick={() => setActive(2)} className={`cursor-pointer ${active==2 ? "font-bold" : "font-normal"}`}>Address Book</p>
-                        <p>Account Information</p>
-                        <p>My product Reviews</p>
-                        <p>My support Tickets</p>
-                        <p>PickaBoo Ckub</p>
-                        <p>Bkash Agreements</p>
+                        <p onClick={() => setActive(0)} className={`cursor-pointer color ${active==0 ? "font-bold" : "font-normal"}`}>Accounts</p>
+                        <p onClick={() => setActive(1)} className={`cursor-pointer color ${active==1 ? "font-bold" : "font-normal"}`}>My Orders</p>
+                        <p onClick={() => setActive(2)} className={`cursor-pointer color ${active==2 ? "font-bold" : "font-normal"}`}>Address Book</p>
+                        <p className="color">Account Information</p>
+                        <p className="color">My product Reviews</p>
+                        <p className="color">My support Tickets</p>
+                        <p className="color">PickaBoo Ckub</p>
+                        <p className="color">Bkash Agreements</p>
                     </div>
                 </div>
 
