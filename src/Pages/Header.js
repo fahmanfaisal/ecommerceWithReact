@@ -11,8 +11,8 @@ export function Header() {
         <div className="mt-5"><hr></hr></div>
         <div className="container mx-auto">
             <div className="grid grid-rows-1 md:grid-cols-12 gap-1 justify-items-stretch items-center px-4 py-4">
-                <div className="justify-self-auto col-span-2 place-self-center">
-                    <img className="w-40 h-20" src="https://b2b-pickaboocdn.azureedge.net/media/logo/stores/1/pickaboo-logo@2x.png" />
+                <div className="flex justify-start col-span-2">
+                    <img className="w-42 h-20" src="https://b2b-pickaboocdn.azureedge.net/media/logo/stores/1/pickaboo-logo@2x.png" />
                 </div>
                 <div className="col-span-5" >
                     <input type="text" placeholder="Search entire store here" className="w-full px-2 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded text-base border border-gray-400 outline-none focus:outline-none focus:ring"/>
@@ -27,7 +27,7 @@ export function Header() {
                     </div>
                 </div>  
                 </div>
-                <div className="flex items-center col-span-3 place-self-center">
+                <div className="flex items-center col-span-3 justify-end">
                     <div className="flex items-center">
                     <div className="color">
                         <FaUser className="w-4 h-4"/>
