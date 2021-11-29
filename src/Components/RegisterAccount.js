@@ -2,14 +2,14 @@ import {React , Routes} from 'react'
 import { Route } from 'react-router'
 import { Link, NavLink } from 'react-router-dom'
 
-function MyAccount() {
+function RegisterAccount() {
     return (
         <div>
             <div>
-                <NavLink to="/user-dashboard"><p className="pl-1 font-semibold text-gray-800 color">My Account</p></NavLink>
+                <NavLink to="/user-login"><p className="pl-1 font-semibold text-gray-800 color">Register Account</p></NavLink>
             </div>
         </div>
     )
 }
 
-export default MyAccount
+export default RegisterAccount

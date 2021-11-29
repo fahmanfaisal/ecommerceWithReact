@@ -1,19 +1,30 @@
 import React from 'react'
+import {useNavigate} from 'react-router-dom'
 import './Header.css'
 import MyAccount from '../Components/MyAccount';
+import RegisterAccount from '../Components/RegisterAccount';
 
 import { FaMarsStroke } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { GiShoppingCart } from "react-icons/gi";
 
+
 export function Header() {
+
+    const navigate = useNavigate();
+    function goBack() {
+        navigate("/", {
+            replace: true,
+        });
+    }
+
     return (
     <div>
         <div className="mt-5"><hr></hr></div>
         <div className="container mx-auto">
             <div className="grid grid-rows-1 md:grid-cols-12 gap-1 justify-items-stretch items-center px-4 py-4">
                 <div className="flex justify-start col-span-2">
-                    <img className="w-42 h-20" src="https://b2b-pickaboocdn.azureedge.net/media/logo/stores/1/pickaboo-logo@2x.png" />
+                    <img onClick={goBack} className="w-42 h-20 cursor-pointer" src="https://b2b-pickaboocdn.azureedge.net/media/logo/stores/1/pickaboo-logo@2x.png" />
                 </div>
                 <div className="col-span-5" >
                     <input type="text" placeholder="Search entire store here" className="w-full px-2 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded text-base border border-gray-400 outline-none focus:outline-none focus:ring"/>
@@ -33,15 +44,13 @@ export function Header() {
                     <div className="color">
                         <FaUser className="w-4 h-4"/>
                     </div>
-                    <MyAccount/>
+                    <RegisterAccount/>
                     </div>
                     <div className="px-2 flex items-center">
                     <div className="color">
                         <FaMarsStroke className="w-4 h-4"/>
                     </div>
-                    <div>
-                        <p className="pl-1 font-semibold text-gray-800 color">Sign Out</p>
-                    </div>
+                    <MyAccount/>
                     </div>
                 </div>
             </div>
