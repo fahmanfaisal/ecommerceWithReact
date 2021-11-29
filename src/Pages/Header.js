@@ -1,5 +1,6 @@
 import React from 'react'
 import './Header.css'
+import MyAccount from '../Components/MyAccount';
 
 import { FaMarsStroke } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
@@ -32,9 +33,7 @@ export function Header() {
                     <div className="color">
                         <FaUser className="w-4 h-4"/>
                     </div>
-                    <div>
-                        <p className="pl-1 font-semibold text-gray-800 color">My Account</p>
-                    </div>
+                    <MyAccount/>
                     </div>
                     <div className="px-2 flex items-center">
                     <div className="color">

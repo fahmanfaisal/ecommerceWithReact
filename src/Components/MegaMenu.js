@@ -3,9 +3,9 @@ import './MegaMenu.css'
 
 function MegaMenu() {
     return (
-    <header className="container mx-auto text-gray-600 body-font">
+    <div className="bg-color">
 
-    <div className="">
+    <div className="container mx-auto">
 
     <nav className="flex flex-wrap md:mr-auto md:ml-4 md:py-1 md:pl-4 items-center text-base">
       <div className="dropdown inline-block relative cursor-pointer">
@@ -109,7 +109,7 @@ function MegaMenu() {
 
     </div>
 
-    </header>
+    </div>
     )
 }
 
