@@ -8,7 +8,7 @@ function AddressBook() {
                             <h2 className="text-sm md:text-md font-semibold text-left">Address Book</h2>
                         </div>
                         <div>
-                            <p className="px-3 py-2 bg-blue-500 text-xs font-semibold text-white rounded text-center">Manage Addresses</p>
+                            <p className="px-3 py-2 text-xs font-semibold text-white rounded text-center" style={{backgroundColor: '#11a0db'}}>Manage Addresses</p>
                         </div>
                     </div>
                     <div className="border-2 border-gray-300 rounded md:flex md:flex-col px-3 py-3">

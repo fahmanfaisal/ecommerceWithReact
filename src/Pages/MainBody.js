@@ -1,15 +1,23 @@
 import React from 'react'
+import BlockHeading from '../Components/BlockHeading'
+import ImageCarousel from '../Components/ImageCarousel'
 import MegaMenu from '../Components/MegaMenu'
 
 function MainBody() {
     return (
         <div>    
             <MegaMenu/>
+        
         <div className="container mx-auto">
-            <div className="p-8">
-                <h2 className="text-xl md:text-2xl font-semibold pl-4 uppercase">Mobile</h2>
-            </div>
+            <div>
+                <ImageCarousel />
+            </div> 
+            
+            <div>
+                <BlockHeading/> 
+            </div>  
         </div>
+
         </div>
     )
 }
