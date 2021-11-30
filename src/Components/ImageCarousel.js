@@ -1,38 +1,59 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import './ImageCarousel.css';
+
+
+import Image0 from "../images/bg01.png"
+import Image1 from "../images/bg02.jpg"
+import Image2 from "../images/bg03.jpg"
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", color: "black",borderRadius:"100%",right:"4%",width:"40px",height:"30px" }}
+      onClick={onClick}
+    ></div>
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block",zIndex:"2",left:"4%",width:"40px",height:"30px" }}
+      onClick={onClick}
+    />
+  );
+}
+
+
 
 export default class ImageCarousel extends Component {
   render() {
     const settings = {
-      dots: true,
+      dots: true, 
       infinite: true,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
       fade: true,
-      arrow: true
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />
     };
     return (
       <div>
-        <h2> Single Item</h2>
-        <Slider {...settings}>
+        <Slider {...settings} className="">
           <div>
-           <img />
+          <img className="cursor-pointer w-full h-full" src={Image0}/>
           </div>
           <div>
-            <h3>2</h3>
+          <img className="cursor-pointer w-full h-full" src={Image1}/>
           </div>
           <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
+          <img className="cursor-pointer w-full h-full" src={Image2}/>
           </div>
         </Slider>
       </div>

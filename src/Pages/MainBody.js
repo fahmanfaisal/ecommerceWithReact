@@ -1,5 +1,6 @@
 import React from 'react'
 import BlockHeading from '../Components/BlockHeading'
+import Card from '../Components/Card'
 import ImageCarousel from '../Components/ImageCarousel'
 import MegaMenu from '../Components/MegaMenu'
 
@@ -9,14 +10,22 @@ function MainBody() {
             <MegaMenu/>
         
         <div className="container mx-auto">
-            <div>
+            <div className="px-6">
                 <ImageCarousel />
             </div> 
             
             <div>
                 <BlockHeading/> 
-            </div>  
+            </div>
+
+            <div>
+
+            </div> 
+
         </div>
+
+        <Card/>
+        <Card/>
 
         </div>
     )
