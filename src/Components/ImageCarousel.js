@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import './ImageCarousel.css';
 
 
-import Image0 from "../images/bg01.png"
+import Image0 from "../images/bg01.jpg"
 import Image1 from "../images/bg02.jpg"
 import Image2 from "../images/bg03.jpg"
 
@@ -40,13 +40,15 @@ export default class ImageCarousel extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       fade: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />
     };
     return (
       <div>
         <Slider {...settings} className="">
-          <div>
+          <div className="">
           <img className="cursor-pointer w-full h-full" src={Image0}/>
           </div>
           <div>
