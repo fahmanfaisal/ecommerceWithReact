@@ -1,4 +1,4 @@
-import { Route , Routes , BrowserRouter} from 'react-router-dom';
+import { Route , Routes , BrowserRouter, useNavigate} from 'react-router-dom';
 import './App.css';
 import UserDashboard from './Pages/UserDashboard/UserDashboard';
 import Footer from './Pages/Footer';
@@ -17,20 +17,22 @@ function App() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
 
+  const navigate = useNavigate();
 
   const handleAction = (id) => {
     const authentication = getAuth();
     if (id === 2) {
       createUserWithEmailAndPassword(authentication, email, password)
         .then((response) => {
-          console.log(response)
-      })
-   }
+          navigate('/userdashboard')
+          sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+        })
+    }
   }
   
   return (
     <div>
-    <BrowserRouter>
+    <>
     <Header/>
       <Routes>
       <Route path="/" element={<MainBody/>} />
@@ -46,11 +48,12 @@ function App() {
         setPassword={setPassword}
         handleAction={() => handleAction(2)}/>} 
        />
-      <Route path="/user-dashboard" element={<UserDashboard/>} />
+      <Route path="/userdashboard" element={<UserDashboard/>} />
+      
       </Routes>
       <Footer/>
   
-    </BrowserRouter>
+    </>
     </div>
       
   );
