@@ -1,14 +1,36 @@
-import React, {useState} from 'react'
+import React, {useState , useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import AccountInformation from '../../Components/AccountInformation'
 import AddressBook from '../../Components/AddressBook'
 import MegaMenu from '../../Components/MegaMenu'
 import MyOrders from '../../Components/MyOrders'
 
 const UserDashboard = () => {
-    const [active,setActive] = useState(0)
-    return (
-        <div>
 
+    let navigate = useNavigate();
+    useEffect(() => {
+        let authToken = sessionStorage.getItem('Auth Token')
+
+        if (authToken) {
+            navigate('/userdashboard')
+        }
+
+        if (!authToken) {
+            navigate('/')
+        }
+    }, [])
+
+    const [active,setActive] = useState(0)
+
+    function logout() {
+        sessionStorage.removeItem('Auth Token')
+        navigate('/')
+    }
+    
+    return (
+
+        <div>
+            
         <div className="p-2" style={{backgroundColor: '#11A0DB'}}>
             <MegaMenu/>
         </div>
@@ -30,6 +52,7 @@ const UserDashboard = () => {
                         <p className="color">My support Tickets</p>
                         <p className="color">PickaBoo Ckub</p>
                         <p className="color">Bkash Agreements</p>
+                        <p className="color" onClick={logout}>LogOut</p>
                     </div>
                 </div>
 
