@@ -9,7 +9,8 @@ import { useState , useEffect } from 'react';
 import { app } from './firebase-config';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 
 function App() {
 
@@ -25,6 +26,11 @@ function App() {
         .then((response) => {
           navigate('/userdashboard')
           sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+        })
+        .catch((error) => {
+          if (error.code === 'auth/email-already-in-use') {
+            toast.error('Email Already in Use');
+          }
         })
     }
   }
@@ -45,7 +51,16 @@ function App() {
           navigate('/userdashboard')
           sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
         })
+        .catch((error) => {
+          if(error.code === 'auth/wrong-password'){
+            toast.error('Please check the Password');
+          }
+          if(error.code === 'auth/user-not-found'){
+            toast.error('Please check the Email');
+          }
+        })    
     }
+    
   }
 
   return (

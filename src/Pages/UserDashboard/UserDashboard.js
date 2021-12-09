@@ -36,7 +36,7 @@ const UserDashboard = () => {
         </div>
       
         <div className="container px-10 mx-auto p-4 ">
-        <h2 className="text-xl md:text-2xl font-semibold pl-4">My Account</h2>
+        <h2 className="text-xl md:text-2xl font-semibold pl-4">User Dashboard</h2>
         <div>
             
             <div className="grid grid-cols-1 md:grid-cols-4  gap-4 p-4">
@@ -52,7 +52,7 @@ const UserDashboard = () => {
                         <p className="color">My support Tickets</p>
                         <p className="color">PickaBoo Ckub</p>
                         <p className="color">Bkash Agreements</p>
-                        <p className="color" onClick={logout}>LogOut</p>
+                        <p className="color text-xl font-semibold px-2 py-1 bg-gray-400 text-blue-400 rounded" onClick={logout}>LogOut</p>
                     </div>
                 </div>
 
