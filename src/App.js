@@ -14,78 +14,79 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('')
+const [email, setEmail] = useState('')
+const [password, setPassword] = useState('')
 
-  const navigate = useNavigate();
+const navigate = useNavigate();
 
-  const handleAction = (id) => {
+const handleAction = (id) => {
     const authentication = getAuth();
     if (id === 2) {
-      createUserWithEmailAndPassword(authentication, email, password)
+    createUserWithEmailAndPassword(authentication, email, password)
         .then((response) => {
-          navigate('/userdashboard')
-          sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+        navigate('/userdashboard')
+        sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
         })
         .catch((error) => {
-          if (error.code === 'auth/email-already-in-use') {
+        if (error.code === 'auth/email-already-in-use') {
             toast.error('Email Already in Use');
-          }
+        }
         })
     }
-  }
+}
 
-  useEffect(() => {
+useEffect(() => {
     let authToken = sessionStorage.getItem('Auth Token')
 
     if (authToken) {
-      navigate('/userdashboard')
+    navigate('/userdashboard')
     }
-  }, [])
+}, [])
 
-  const handleActions = (id) => {
+const handleActions = (id) => {
+
     const authentication = getAuth();
     if (id === 1) {
-      signInWithEmailAndPassword(authentication, email, password)
+    signInWithEmailAndPassword(authentication, email, password)
         .then((response) => {
-          navigate('/userdashboard')
-          sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+        navigate('/userdashboard')
+        sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
         })
         .catch((error) => {
-          if(error.code === 'auth/wrong-password'){
+        if(error.code === 'auth/wrong-password'){
             toast.error('Please check the Password');
-          }
-          if(error.code === 'auth/user-not-found'){
+        }
+        if(error.code === 'auth/user-not-found'){
             toast.error('Please check the Email');
-          }
+        }
         })    
     }
     
-  }
+}
 
-  return (
+
+return (
     <div>
     <>
     <Header/>
-      <Routes>
-      <Route path="/" element={<MainBody/>} />
-      <Route path="/user-login" element={<Userlogin 
+    <Routes>
+    <Route path="/" element={<MainBody/>} />
+    <Route path="/user-login" element={<Userlogin 
         title="Login"
         setEmail={setEmail}
         setPassword={setPassword}
         handleAction={() => handleActions(1)}/>}
-      />
-      <Route path='/user-register' element={<Userlogin
+    />
+    <Route path='/user-register' element={<Userlogin
         title="Register"
         setEmail={setEmail}
         setPassword={setPassword}
         handleAction={() => handleAction(2)}/>} 
-       />
-      <Route path="/userdashboard" element={<UserDashboard/>} />
-      
-      </Routes>
-      <Footer/>
-  
+    />
+    <Route path="/userdashboard" element={<UserDashboard/>} />
+    
+    </Routes>
+    <Footer/>
     </>
     </div>
 );

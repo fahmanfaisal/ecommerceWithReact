@@ -7,6 +7,7 @@ import MyOrders from '../../Components/MyOrders'
 
 const UserDashboard = () => {
 
+
     let navigate = useNavigate();
     useEffect(() => {
         let authToken = sessionStorage.getItem('Auth Token')
@@ -21,20 +22,21 @@ const UserDashboard = () => {
     }, [])
 
     const [active,setActive] = useState(0)
+    
 
     function logout() {
         sessionStorage.removeItem('Auth Token')
         navigate('/')
     }
-    
+
     return (
+        
 
         <div>
             
         <div className="p-2" style={{backgroundColor: '#11A0DB'}}>
             <MegaMenu/>
         </div>
-      
         <div className="container px-10 mx-auto p-4 ">
         <h2 className="text-xl md:text-2xl font-semibold pl-4">User Dashboard</h2>
         <div>
@@ -52,7 +54,9 @@ const UserDashboard = () => {
                         <p className="color">My support Tickets</p>
                         <p className="color">PickaBoo Ckub</p>
                         <p className="color">Bkash Agreements</p>
-                        <p className="color text-xl font-semibold px-2 py-1 bg-gray-400 text-blue-400 rounded" onClick={logout}>LogOut</p>
+                        <div style={{backgroundColor:'#11A0DB'}}  className="rounded mt-2">
+                        <p className="text-md font-semibold px-2 py-2 text-white cursor-pointer" onClick={logout}>LogOut</p>
+                        </div>
                     </div>
                 </div>
 

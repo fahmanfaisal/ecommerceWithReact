@@ -1,6 +1,7 @@
 import React from 'react'
 import AddressBook from './AddressBook'
 
+
 function AccountInformation() {
     return (
 <div>
@@ -10,8 +11,7 @@ function AccountInformation() {
     <div className="border-2 border-gray-300 rounded md:flex md:flex-col px-3 py-3">
         <div>
             <p>Contact Information</p>
-            <p>Fahman Faisal</p>
-            <p>Fahmanchy@gmail.com</p>
+            <p></p>         
         </div>
     <div className="flex py-2">
         <div><p>Edit</p></div>
