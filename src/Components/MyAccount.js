@@ -6,7 +6,7 @@ function MyAccount() {
     return (
         <div>
             <div>
-                <NavLink to="/user-dashboard"><p className="pl-1 font-semibold text-gray-800 color">My Account</p></NavLink>
+                <NavLink to="/"><p className="pl-1 font-semibold text-gray-800 color">My Account</p></NavLink>
             </div>
         </div>
     )
