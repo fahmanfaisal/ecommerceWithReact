@@ -60,8 +60,7 @@ const handleActions = (id) => {
             toast.error('Please check the Email');
         }
         })    
-    }
-    
+    }  
 }
 
 
@@ -71,7 +70,8 @@ return (
     <Header/>
     <Routes>
     <Route path="/" element={<MainBody/>} />
-    <Route path="/user-login" element={<Userlogin 
+    <Route path="/user-login" element={
+    <Userlogin 
         title="Login"
         setEmail={setEmail}
         setPassword={setPassword}

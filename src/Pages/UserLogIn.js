@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
 
 export function Userlogin({ title, setPassword, setEmail, handleAction }) {
-    
+    console.log("email",setEmail);
     
     return (
         

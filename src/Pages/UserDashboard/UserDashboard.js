@@ -1,3 +1,4 @@
+import { getAuth } from 'firebase/auth'
 import React, {useState , useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AccountInformation from '../../Components/AccountInformation'
@@ -7,8 +8,10 @@ import MyOrders from '../../Components/MyOrders'
 
 const UserDashboard = () => {
 
+    const [email, setEmail] = useState('')
 
     let navigate = useNavigate();
+   
     useEffect(() => {
         let authToken = sessionStorage.getItem('Auth Token')
 
@@ -19,7 +22,17 @@ const UserDashboard = () => {
         if (!authToken) {
             navigate('/')
         }
+        const authentication = getAuth();
+
+        console.log(authentication.currentUser.email);
+        // authentication.currentUser.email = setEmail
+        // console.log(setEmail);
+        setEmail(authentication.currentUser.email)
     }, [])
+
+    useEffect(() => {
+        console.log('This is for ', email);
+    }, [email])
 
     const [active,setActive] = useState(0)
     
@@ -65,7 +78,7 @@ const UserDashboard = () => {
                 <div className="changeable md:col-span-3">
 
                 {
-                    active == 0 && <AccountInformation/>
+                    active == 0 && <AccountInformation email={email} />
                 }
 
                 {
