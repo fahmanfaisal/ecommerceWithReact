@@ -69,21 +69,21 @@ return (
     <>
     <Header/>
     <Routes>
-    <Route path="/" element={<MainBody/>} />
-    <Route path="/user-login" element={
-    <Userlogin 
-        title="Login"
-        setEmail={setEmail}
-        setPassword={setPassword}
-        handleAction={() => handleActions(1)}/>}
-    />
-    <Route path='/user-register' element={<Userlogin
-        title="Register"
-        setEmail={setEmail}
-        setPassword={setPassword}
-        handleAction={() => handleAction(2)}/>} 
-    />
-    <Route path="/userdashboard" element={<UserDashboard/>} />
+        <Route path="/" element={<MainBody/>} />
+        <Route path="/user-login" element={
+        <Userlogin 
+            title="Login"
+            setEmail={setEmail}
+            setPassword={setPassword}
+            handleAction={() => handleActions(1)}/>}
+        />
+        <Route path='/user-register' element={<Userlogin
+            title="Register"
+            setEmail={setEmail}
+            setPassword={setPassword}
+            handleAction={() => handleAction(2)}/>} 
+        />
+        <Route path="/userdashboard" element={<UserDashboard/>} />
     
     </Routes>
     <Footer/>

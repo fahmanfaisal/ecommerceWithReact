@@ -10,6 +10,8 @@ const UserDashboard = () => {
 
     const [email, setEmail] = useState('')
 
+    const [auth, setAuth] = useState('')
+
     let navigate = useNavigate();
    
     useEffect(() => {
@@ -22,17 +24,13 @@ const UserDashboard = () => {
         if (!authToken) {
             navigate('/')
         }
-        const authentication = getAuth();
+        // const authentication = getAuth();
+        setAuth(getAuth());
+        if(auth !=''){
+            setEmail(auth?.currentUser?.email)
+        }
+    }, [auth])
 
-        console.log(authentication.currentUser.email);
-        // authentication.currentUser.email = setEmail
-        // console.log(setEmail);
-        setEmail(authentication.currentUser.email)
-    }, [])
-
-    useEffect(() => {
-        console.log('This is for ', email);
-    }, [email])
 
     const [active,setActive] = useState(0)
     
@@ -86,7 +84,7 @@ const UserDashboard = () => {
                 }
 
                 {
-                    active == 2 && <AddressBook/>
+                    active == 2 && <AddressBook email={email}/>
                 }
 
                 </div>
